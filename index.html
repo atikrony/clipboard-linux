@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="clipboard-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="drag-dots">⋮⋮</span>
+                    Clipboard
+                </h1>
+                <div class="header-controls">
+                    <button class="control-btn" id="clearAllBtn" title="Clear all">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M3 6v7a2 2 0 002 2h6a2 2 0 002-2V6M8 3v1m-4 0h8M6.5 3V2.5A1.5 1.5 0 018 1h0a1.5 1.5 0 011.5 1.5V3"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn" id="closeBtn" title="Close">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+                            <path d="M13 1L1 13M1 1l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M8 4a2 2 0 00-2 2v20a2 2 0 002 2h16a2 2 0 002-2V9.414a2 2 0 00-.586-1.414L20.586 3.172A2 2 0 0019.172 2.586L19 2.414A2 2 0 0017.586 2H8z"/>
+                        <path d="M18 8h6l-6-6v6z"/>
+                        <path d="M12 14h8M12 18h8M12 22h6"/>
+                    </svg>
+                </div>
+                <h3>Nothing to see here yet ;)</h3>
+                <p>Copy something to get started</p>
+            </div>
+
+            <!-- Pinned Section -->
+            <div class="section pinned-section" id="pinnedSection" style="display: none;">
+                <div class="items-grid" id="pinnedItems"></div>
+            </div>
+
+            <!-- Recent Section -->
+            <div class="section" id="recentSection">
+                <div class="items-grid" id="recentItems"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
