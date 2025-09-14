@@ -37,7 +37,7 @@
   },
   "build": {
     "appId": "com.mintclipboard.app",
-    "productName": "Mint Clipboard",
+    "productName": "Mint-Clipboard",
     "directories": {
       "output": "dist"
     },
@@ -128,7 +128,10 @@
     "deb": {
       "depends": ["xdotool"],
       "recommends": ["libnotify-bin"],
-      "afterInstall": "build/postinstall.sh"
+      "afterInstall": "build/postinstall.sh",
+      "fpm": [
+        "--deb-systemd-restart-after-upgrade"
+      ]
     }
   }
 }
